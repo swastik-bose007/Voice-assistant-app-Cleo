@@ -14,5 +14,13 @@ export const dummyMessages = [
     {
         role: 'assistant',
         content: 'https://storage.googleapis.com/pai-images/ae74b3002bfe4b538493ca7aedb6a300.jpeg'
-    }
+    },
+    {
+        role: 'user', 
+        content: 'who are you?'
+    },
+    {
+        role: 'assistant',
+        content: "I'm Cleo, your personal ai assistant."
+    },
 ]
