@@ -39,7 +39,7 @@ const SplashScreen = ({ navigation }) => {
         <Text style={[ splashStyles.faintedText ]} className="text-start">STANT</Text>
       </View>
     </View>
-  )
+  ) 
 }
 
 export default SplashScreen

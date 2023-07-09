@@ -18,6 +18,7 @@ const App = () => {
   let [fontsLoaded] = useFonts({
     "ClimateCrisis-Regular": require("./assets/fonts/ClimateCrisis-Regular.ttf"),
     "Archivo-Regular": require("./assets/fonts/Archivo-Regular.ttf"),
+    "Archivo-ExtraBold": require("./assets/fonts/Archivo-ExtraBold.ttf"),
     "FREEFATFONT-Regular": require("./assets/fonts/FREEFATFONT-Regular.otf"),
   });
   useEffect(() => {
