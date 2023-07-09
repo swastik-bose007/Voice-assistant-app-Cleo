@@ -1,20 +1,42 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+// --------------------------------------------------------------------
+// SYSTEM COMPONENTS
+// --------------------------------------------------------------------
+import { View, Text } from 'react-native'
+import React,{ useEffect, useState } from 'react';
+import { useFonts } from 'expo-font';
+import * as SplScreen from "expo-splash-screen";
+// --------------------------------------------------------------------
+// APP NAVIGATION
+// --------------------------------------------------------------------
+import AppNavigation from './src/navigations'
 
-export default function App() {
+const App = () => {
+  
+  // ------------------------------------------------------------
+  // fonts
+  // ------------------------------------------------------------
+  let [fontsLoaded] = useFonts({
+    "ClimateCrisis-Regular": require("./assets/fonts/ClimateCrisis-Regular.ttf"),
+    "Archivo-Regular": require("./assets/fonts/Archivo-Regular.ttf"),
+    "FREEFATFONT-Regular": require("./assets/fonts/FREEFATFONT-Regular.otf"),
+  });
+  useEffect(() => {
+    async function prepare() {
+      await SplScreen.preventAutoHideAsync();
+    }
+    prepare();
+  }, []);
+
+  if (!fontsLoaded) {
+    return undefined;
+  } else {
+    SplScreen.hideAsync();
+  }
+
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+    <AppNavigation />
+  )
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default App
